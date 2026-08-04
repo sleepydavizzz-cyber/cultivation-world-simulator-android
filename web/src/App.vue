@@ -271,8 +271,8 @@ watch(sidebarWidth, width => {
 .app-layout {
   display: flex;
   flex-direction: column;
-  width: 100vw;
-  height: 100vh;
+  width: 100dvw;
+  height: 100dvh;
   background: #000;
   color: #eee;
   overflow: hidden;
@@ -293,14 +293,15 @@ watch(sidebarWidth, width => {
 .map-container {
   flex: 1;
   position: relative;
+  min-height: 0;
   background: #111;
   overflow: hidden;
 }
 
 .top-controls {
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: max(10px, env(safe-area-inset-top));
+  right: max(10px, env(safe-area-inset-right));
   z-index: 100;
   display: flex;
   gap: 10px;
